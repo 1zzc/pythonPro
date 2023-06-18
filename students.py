@@ -6,8 +6,11 @@ class Student:
         self.students = student_list
 
 
+    # 使用print或者str实例对象时调用   调试时调用__repr__()
+    def __str__(self):
+        return ','.join(self.students)
 
-    # 遇到迭代的需求，先找类里面是否有__iter__(),再找__getitem__()
+      # 遇到迭代的需求，先找类里面是否有__iter__(),再找__getitem__()
       # item是索引，从0开始
     def __getitem__(self,item):
         return self.students[item]
@@ -27,5 +30,6 @@ print(len(s1))
 print(len(s))
 for item in s:
     print(item)
-        
+
+print(str(s))
         
